@@ -1,0 +1,85 @@
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out; //make ani very smooth
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d; //sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element.
+    transform-origin: 100px 100px 0; //center the rotation of the animation (x,y,z)
+    margin-left: calc(50% - 100px); //100px is the width of cube; dead center of right side
+
+    div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        background: rgba(255, 255, 255, 0.4);
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 20px 0px lightyellow; //offset-x | offset-y | blur-radius | spread-radius | color 
+    }
+
+    .face1 {
+        transform: translateZ(100px); //want a 3D effect
+    }
+    .face2 {
+        transform: rotateY(90deg) translateZ(100px); 
+    }
+    .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(100px); 
+    }
+    .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(100px); 
+    }
+    .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px); 
+    }
+    .face6 {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+}
+
+@keyframes spincube {
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+        transform: rotateY(-90deg);
+    }
+    33% {
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+        transform: rotateY(-270deg) rotateZ(90deg);
+    }
+    83% {
+        transform: rotateX(90deg);
+    }
+}
+
+
+// CSS Overflow
+// The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+// The overflow property has the following values:
+
+// visible - Default. The overflow is not clipped. The content renders outside the element's box
+// hidden - The overflow is clipped, and the rest of the content will be invisible
+// scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+// auto - Similar to scroll, but it adds scrollbars only when necessary

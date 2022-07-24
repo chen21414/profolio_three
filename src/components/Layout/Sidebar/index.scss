@@ -1,0 +1,188 @@
+.nav-bar {
+    background: #181818;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    min-height: 500px;
+    
+    .logo {
+        display: block;
+        padding: 8px 0;
+
+        img {
+            display: block;
+            margin: 8px auto;
+            width: 24px;
+            height: auto;
+
+            &.sub-logo {
+                width: 50px;
+            }
+        }
+    }
+
+    nav {
+        display: block;
+        text-align: center;
+        position: absolute;
+        height: 210px;
+        top: 50%;
+        margin-top: -120px;
+        width: 100;
+
+        a {
+            font-size: 22px;
+            color: #4d4d4e;
+            display: block;
+            line-height: 51px; //minmum height
+            height: 51px;
+            position: relative;
+            text-decoration: none;
+
+            i {
+                transition: all 0.3s ease-out;
+            }
+
+            &:hover {
+                color: #ffd700;
+
+                svg {
+                    opacity: 0;
+                }
+
+                &:after{
+                    opacity: 1;
+                }
+            }
+
+            &:after {
+                content: '';
+                font-size: 9px;
+                letter-spacing: 2px;
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+                opacity: 0;
+                transition: all 0.3s ease-out;
+            }
+
+            &:first-child {
+                &::after {
+                    content: 'HOME';
+                }
+            }
+
+        }
+
+        a.about-link {
+            &:after {
+                content: 'ABOUT';
+            }
+        }
+
+        a.contact-link {
+            &:after {
+                content: 'CONTACT';
+            }
+        }
+
+        a.active {
+            svg {
+                color: #ffd700;
+            }
+        }
+    }
+
+    ul {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: block;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        margin:0;
+
+        li {
+            a{
+                padding: 7px 0;
+                display: block;
+                font-size: 15px;
+                line-height: 16px;
+                color: #4d4d4e;
+
+
+                &:hover svg {
+                    color: #ffd700;
+                }
+            }
+        }
+    }
+}
+
+
+//explaination for negative margin top:
+//if top is %, negative is againsting it (up)
+//https://stackoverflow.com/questions/11495200/how-do-negative-margins-in-css-work-and-why-is-margin-top-5-margin-bottom5
+
+// .set6 .child {
+//     top: 50%; /* level from which margin-top starts 
+//       - downwards, in the case of a positive margin
+//       - upwards, in the case of a negative margin	
+//       */
+//     left: 50%; /* level from which margin-left starts 
+//       - towards right, in the case of a positive margin
+//       - towards left, in the case of a negative margin	
+//       */
+//     margin: -75px;
+//     position: absolute;
+//   }
+
+
+// line-height
+// The line-height CSS property sets the height of a line box. 
+// It's commonly used to set the distance between lines of text. On block-level elements, 
+// it specifies the minimum height of line boxes within the element. 
+// On non-replaced inline elements, 
+// it specifies the height that is used to calculate line box height.
+
+
+// Using transitions when highlighting menus
+// A common use of CSS is to highlight items in a menu as the user hovers the mouse cursor over them. It's easy to use transitions to make the effect even more attractive.
+
+// First, we set up the menu using HTML:
+
+// <nav>
+//   <a href="#">Home</a>
+//   <a href="#">About</a>
+//   <a href="#">Contact Us</a>
+//   <a href="#">Links</a>
+// </nav>
+// Copy to Clipboard
+// Then we build the CSS to implement the look and feel of our menu:
+
+// nav {
+//   display: flex;
+//   gap: 0.5rem;
+// }
+
+// a {
+//   flex: 1;
+//   background-color: #333;
+//   color: #fff;
+//   border: 1px solid;
+//   padding: 0.5rem;
+//   text-align: center;
+//   text-decoration: none;
+//   transition: all 0.5s ease-out;
+// }
+
+// a:hover,
+// a:focus {
+//   background-color: #fff;
+//   color: #333;
+// }

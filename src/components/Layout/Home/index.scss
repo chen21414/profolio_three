@@ -1,0 +1,95 @@
+.home-page {
+
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        max-height: 90%;
+    }
+    
+
+   h1 {
+    color: #fff;
+    font-size: 53px;
+    margin: 0;
+    font-family: 'Coolvetica';
+    font-weight: 400;
+
+    &::before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore';
+        color: #ffd700;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -40px;
+        left: 15px;
+        opacity: 0.6;
+    }
+
+    &::after {
+        content: '<h1/>';
+        font-family: 'La Belle Aurore';
+        color: #ffd700;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 18px;
+        margin-left: 20px;
+        animation: fadeIn 1s 5s backwards;//type, duration, delay, fill mode
+        opacity: 0.6;
+    }
+
+    img {
+        width: 32px;
+        margin-left:0px;
+        opacity: 0;
+        height: auto;
+        animation: rotateIn 1s linear both;
+        animation-delay: 1.4s;
+    }
+   } 
+}
+
+h2 {
+    color:#8d8d8d;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 1.8s backwards;
+}
+
+.flat-button {
+    color:#ffd700;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #ffd700;
+    margin-top: 25px;
+    float: left;
+    animation: fadeIn 1s 1.8s backwards;
+    white-space: nowrap;
+
+    &:hover {
+        background: #ffd700;
+        color: #333;
+    }
+}
+
+
+// The animation-fill-mode property specifies a style for the element when the animation is not playing (before it starts, after it ends, or both).
+
+// CSS animations do not affect the element before the first keyframe is played or after the last keyframe is played. The animation-fill-mode property can override this behavior.
+
+// Property Values
+// Value	Description
+// none	Default value. Animation will not apply any styles to the element before or after it is executing
+// forwards	The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+// backwards	The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+// both	The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+// initial	Sets this property to its default value. Read about initial

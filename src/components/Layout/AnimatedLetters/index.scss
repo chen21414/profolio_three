@@ -1,0 +1,40 @@
+.text-animate {
+    display: inline-block;
+    opacity: 0;
+    animation: bounceIn 1s 1s;
+    animation-fill-mode: forwards;
+    min-width: 10px;
+}
+
+.text-animate-hover {
+    min-width: 10px;
+    display: inline-block;
+    animation-fill-mode: both;
+
+    &:hover {
+        animation: rubberBand 1s;
+        color: #ffd700;
+    }
+}
+
+@for $i from 1 through 35 {
+    .text-animate._#{$i} {
+        animation-delay: #{$i / 10}s;
+    }
+}
+
+
+
+
+
+
+
+// Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+
+// Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+
+// Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+
+
+// The min-width property defines the minimum width of an element. If the content is smaller than the minimum width, the minimum width will be applied. 
+// If the content is larger than the minimum width, the min-width property has no effect.
